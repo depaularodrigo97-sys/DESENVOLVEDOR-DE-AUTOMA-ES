@@ -17,3 +17,18 @@ if (menuButton && menu) {
 
 const year = document.querySelector('#year');
 if (year) year.textContent = String(new Date().getFullYear());
+
+// Google Analytics 4
+const GA_MEASUREMENT_ID = 'G-YE1Y8Z9YYR';
+window.dataLayer = window.dataLayer || [];
+window.gtag = window.gtag || function () {
+  window.dataLayer.push(arguments);
+};
+
+const gaScript = document.createElement('script');
+gaScript.async = true;
+gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+document.head.appendChild(gaScript);
+
+window.gtag('js', new Date());
+window.gtag('config', GA_MEASUREMENT_ID);
